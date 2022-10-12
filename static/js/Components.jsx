@@ -16,11 +16,11 @@ function AllMelonsPage(props) {
   for (const melon of Object.values(melons)) {
     const melonCard = (
       <MelonCard
-        key="cren"
-        code="cren"
-        name="Crenshaw"
-        imgUrl="https://fellowship.hackbrightacademy.com/materials/exercises/images/melons/crenshaw.png"
-        price={2}
+        key={melon.melon_code}
+        code={melon.melon_code}
+        name={melon.name}
+        imgUrl={melon.image_url}
+        price={melon.price}
       />
     );
 
