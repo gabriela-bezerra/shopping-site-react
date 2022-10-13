@@ -8,7 +8,19 @@ function App() {
       .then((melonData) => setMelons(melonData));
   }, []);
 
+  function addMelonToCart(melonCode) {
+    setShoppingCart((currentShoppingCart) => {
+      const newShoppingCart = Object.assign({}, currentShoppingCart);
 
+      if (newShoppingCart[melonCode]) {
+        newShoppingCart[melonCode] += 1;
+      } else {
+        newShoppingCart[melonCode] = 1;
+      }
+
+      return newShoppingCart
+    })
+  }
 
   return (
     <ReactRouterDOM.BrowserRouter>
