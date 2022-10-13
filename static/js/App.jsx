@@ -1,11 +1,13 @@
 function App() {
   const [melons, setMelons] = React.useState({});
+  const [shoppingCart, setShoppingCart] = React.useState({});
 
   React.useEffect(() => {
     fetch('/api/melons')
       .then((response) => response.json())
       .then((melonData) => setMelons(melonData));
   }, []);
+
 
 
   return (
